@@ -10,18 +10,17 @@
   <body>
       <div id="root"></div>     
       <script type="text/babel">
-        // let ul = React.createElement(
-        //     "ul", 
-        //     { style: {color: "blue"}}, 
-        //     React.createElement("li", null, "Save"),
-        //     React.createElement("li", null, "Me"),
-        //     React.createElement("li", null, "JSX"));
-
+        let robot = "🤖";
+        let cowboy = "🤠";
+        let moon = "🌛";
+        let name = "React";
           ReactDOM.render(
             <ul>
-                <li>🤖</li>
-                <li>🤠</li>
-                <li>🌛</li>
+                <li>{robot}</li>
+                <li>{cowboy}</li>
+                <li>{moon}</li>
+                <li>{name.toUpperCase()}</li>
+                <li>{name.length}</li>
             </ul>,
               document.getElementById("root")
           );
