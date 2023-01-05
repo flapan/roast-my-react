@@ -7,11 +7,21 @@
     <title>React ⚛️</title>
   </head>
   <body>
-      <div id="root"></div>
-      
+      <div id="root"></div>     
       <script type="text/javascript">
+        // let ul = React.createElement(
+        //     "ul", 
+        //     { style: {color: "blue"}}, 
+        //     React.createElement("li", null, "Save"),
+        //     React.createElement("li", null, "Me"),
+        //     React.createElement("li", null, "JSX"));
+
           ReactDOM.render(
-              React.createElement("h1", null, "Getting Started!"),
+            <ul>
+                <li>🤖</li>
+                <li>🤠</li>
+                <li>🌛</li>
+            </ul>,
               document.getElementById("root")
           );
       </script>
