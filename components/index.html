@@ -24,25 +24,38 @@
         function Main(props) {
             return (
                 <section>
-                    <p>
-                        {props.name}'s pets are the cutest!
-                    </p>
+                    <ul>
+                        {props.pets.map((pet) => (
+                            <li>{pet}</li>
+                        ))}
+                    </ul>
                 </section>
             );
         }
         function Footer(props) {
             return (
                 <footer>
-                    <p>Copyright {props.year}</p>
+                    <p>{props.company} Copyright {props.year}</p>
                 </footer>
             );
         }
+        const pets = [
+            "Hermit Crab",
+            "Triops",
+            "Dog"
+        ]
         function App() {
             return (
                 <div>
                     <Header name="Anker" />
-                    <Main name="Anker" />
-                    <Footer year={new Date().getFullYear()} />
+                    <Main 
+                        name="Anker"
+                        pets={pets}
+                    />
+                    <Footer 
+                        year={new Date().getFullYear()}
+                        company="Skewed Bytes" 
+                    />
                 </div>
             );
         }
