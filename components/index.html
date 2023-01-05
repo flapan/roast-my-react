@@ -13,27 +13,36 @@
     <div id="root"></div>
     <script type="text/babel">
 
-        function Header() {
+        function Header(props) {
+            console.log(props)
             return (
                 <header>
-                    <h1>Anker's Pets</h1>
+                    <h1>{props.name}'s Pets</h1>
                 </header>
             );
         }
-        function Main() {
+        function Main(props) {
             return (
                 <section>
                     <p>
-                        Anker's pets are the cutest
+                        {props.name}'s pets are the cutest!
                     </p>
                 </section>
+            );
+        }
+        function Footer(props) {
+            return (
+                <footer>
+                    <p>Copyright {props.year}</p>
+                </footer>
             );
         }
         function App() {
             return (
                 <div>
-                    <Header />
-                    <Main />
+                    <Header name="Anker" />
+                    <Main name="Anker" />
+                    <Footer year={new Date().getFullYear()} />
                 </div>
             );
         }
