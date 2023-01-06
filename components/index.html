@@ -58,7 +58,7 @@
         );
         function App() {
             return (
-                <div>
+                <React.Fragment>
                     <Header name="Anker" />
                     <Main
                         name="Anker"
@@ -68,7 +68,7 @@
                         year={new Date().getFullYear()}
                         company="Skewed Bytes"
                     />
-                </div>
+                </React.Fragment>
             );
         }
         ReactDOM.render(
