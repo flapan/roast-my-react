@@ -14,7 +14,7 @@
     <script type="text/babel">
 
         function Header(props) {
-            console.log(props)
+            //console.log(props)
             return (
                 <header>
                     <h1>{props.name}'s Pets</h1>
@@ -24,9 +24,15 @@
         function Main(props) {
             return (
                 <section>
+                    <img 
+                    height={300}
+                    //src="https://images.pexels.com/photos/8016080/pexels-photo-8016080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                    src="../assets/hermitCrabs.jpeg"
+                    alt="Two hermit crabs next to each other"
+                    />
                     <ul>
                         {props.pets.map((pet) => (
-                            <li>{pet}</li>
+                            <li key={pet.id}>{pet.species}</li>
                         ))}
                     </ul>
                 </section>
@@ -44,17 +50,23 @@
             "Triops",
             "Dog"
         ]
+        const petObjects = pets.map(
+            (pet, i) => ({
+                id: i,
+                species: pet
+            })
+        );
         function App() {
             return (
                 <div>
                     <Header name="Anker" />
-                    <Main 
+                    <Main
                         name="Anker"
-                        pets={pets}
+                        pets={petObjects}
                     />
-                    <Footer 
+                    <Footer
                         year={new Date().getFullYear()}
-                        company="Skewed Bytes" 
+                        company="Skewed Bytes"
                     />
                 </div>
             );
